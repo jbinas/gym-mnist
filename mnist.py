@@ -48,6 +48,7 @@ class MnistEnv(gym.Env):
         return n, c
 
     def step(self, action):
+        self.step_count += 1
         if action > 0:
             n, c = self._transform_action(action)
             self.state[n] += c
